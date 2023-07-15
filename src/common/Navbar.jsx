@@ -53,7 +53,7 @@ const Navbar = () => {
         <>
             <header className='relative w-full'>
                 <div className={`hidden sm:flex sm:justify-center items-center h-40 bg-gradient-to-tr from-sky-100 shadow-lg to-indigo-200`}>
-                    <img src={`/photos/AHS-Heading-transparent.png`}/>
+                    <img src={`/photos/AHS-Heading-transparent.png`} className={`h-28`}/>
                 </div>
                 <nav className='flex justify-between px-4 h-16 dark:bg-gray-600 bg-teal-200 items-center sm:hidden'>
                     <button className='transform active:scale-90' onClick={menuopener}><MenuIcon /></button><div><img className='h-10' src="../photos/AHS-Heading-transparent.png" alt="School Logo" /></div>
