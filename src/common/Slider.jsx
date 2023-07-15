@@ -33,10 +33,10 @@ const Slider = ({slides}) => {
 
     return(
         <>
-            <div className={`flex justify-center gap-4 max-w-full h-32 items-center bg-blue-200 xs:h-40 sm:h-60 sm:gap-14 md:h-72 md:gap-16 lg:h-96 lg:gap-20`}>
+            <div className={`flex justify-center gap-4 max-w-full h-48 items-center bg-blue-200 xs:h-56 sm:h-60 sm:gap-14 md:h-72 md:gap-16 lg:h-96 lg:gap-20`}>
                 <button onClick={backHandler}><ArrowBackIosNewIcon style={{fontSize: fontSizeValue}}/></button>
                     {slides.map((slide, slideId) => (
-                        activeIndex == slideId && <img ref={image} key={slideId} src={`${slide.path}`} className={`w-2/3 h-24 xs:h-3/4 xs:w-2/3 lg:w-2/3 rounded shadow`}/>
+                        activeIndex == slideId && <img ref={image} key={slideId} src={`${slide.path}`} className={`w-2/3 h-36 xs:h-3/4 xs:w-2/3 lg:w-2/3 rounded shadow`}/>
                     ))}
                 <button onClick={NextHandler}><ArrowForwardIosIcon style={{fontSize: fontSizeValue}}/></button>
             </div>

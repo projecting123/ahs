@@ -5,6 +5,9 @@ const Welcome = () => {
   const slides = [{path: 'photos/AHS.webp'}, {path: 'photos/AHS_2011.webp'}, {path: 'photos/AHS_Students.webp'}]
   return (
       <>
+          <div className={`hidden sm:flex sm:justify-center items-center h-40 bg-gradient-to-tr from-sky-100 shadow-lg to-indigo-200`}>
+              <img src={`/photos/AHS-Heading-transparent.png`}/>
+          </div>
         <Slider slides={slides}/>
           <div className={`grid justify-items-center pt-3 gap-6 bg-gradient-to-r from-blue-100 to-teal-100 sm:grid-cols-2`}>
             <section className={`flex flex-col items-center border border-t-8 border-t-blue-400 border-gray-500 m-2 py-2 rounded-xl`}>
