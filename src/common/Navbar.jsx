@@ -51,18 +51,18 @@ const Navbar = () => {
     const menuopener = () => (setIsMenuOpen(true),setShouldShowDropdown(false))
     const menucloser = () => setIsMenuOpen(false)
 
-    window.addEventListener('scroll', () => {
-        if(window.scrollY > 400){
-            menu.current.classList.remove('sm:relative')
-            menu.current.classList.add('top-32', 'transition-all', 'duration-500')
-            logo.current.classList.add('sm:fixed','top-0', 'w-full')
-        }
-        else{
-            menu.current.classList.add('sm:relative')
-            menu.current.classList.remove('top-32', 'transition-all', 'duration-500')
-            logo.current.classList.remove('sm:fixed','top-0', 'w-full')
-        }
-    })
+    // window.addEventListener('scroll', () => {
+    //     if(window.scrollY > 350){
+    //         menu.current.classList.remove('sm:relative')
+    //         menu.current.classList.add('top-32', 'transition-all', 'duration-500')
+    //         logo.current.classList.add('sm:fixed','top-0', 'w-full')
+    //     }
+    //     else{
+    //         menu.current.classList.add('sm:relative')
+    //         menu.current.classList.remove('top-32', 'transition-all', 'duration-500')
+    //         logo.current.classList.remove('sm:fixed','top-0', 'w-full')
+    //     }
+    // })
 
     return (
         <>
