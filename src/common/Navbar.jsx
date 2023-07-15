@@ -21,6 +21,7 @@ const Navbar = () => {
     const [shouldShowDropdown, setShouldShowDropdown] = useState(true)
     const [clickTimes, setClickTimes] = useState(0)
     const menu = useRef(null)
+    const logo = useRef(null)
     const windowSize = window.innerWidth
     useEffect(() => {
         document.documentElement.className = theme
@@ -49,16 +50,30 @@ const Navbar = () => {
     const childLinkHandler = () => (setIsMenuOpen(false), setClickTimes(0), setShouldShowDropdown(false))
     const menuopener = () => (setIsMenuOpen(true),setShouldShowDropdown(false))
     const menucloser = () => setIsMenuOpen(false)
+
+    window.addEventListener('scroll', () => {
+        if(window.scrollY > 500){
+            menu.current.classList.remove('sm:relative')
+            menu.current.classList.add('sm:top-32', 'sm:transition-all', 'sm:duration-500')
+            logo.current.classList.add('sm:fixed', 'w-full', 'top-0', 'z-20')
+        }
+        else{
+            menu.current.classList.add('sm:relative')
+            menu.current.classList.remove('sm:top-32', 'sm:transition-all', 'sm:duration-500')
+            logo.current.classList.remove('sm:fixed', 'w-full', 'top-0', 'z-20')
+        }
+    })
+
     return (
         <>
             <header className='relative w-full'>
-                <div className={`hidden sm:flex sm:justify-center items-center h-40 bg-gradient-to-tr from-sky-100 shadow-lg to-indigo-200`}>
-                    <img src={`/photos/AHS-Heading-transparent.png`} className={`h-28`}/>
+                <div ref={logo} className={`hidden sm:flex sm:justify-center items-center transition h-36 bg-gradient-to-tr from-sky-100 shadow-lg to-indigo-200`}>
+                    <img src={`/photos/AHS-Heading-transparent.png`} className={`h-2/3`}/>
                 </div>
                 <nav className='flex justify-between px-4 h-16 dark:bg-gray-600 bg-teal-200 items-center sm:hidden'>
                     <button className='transform active:scale-90' onClick={menuopener}><MenuIcon /></button><div><img className='h-10' src="../photos/AHS-Heading-transparent.png" alt="School Logo" /></div>
                 </nav>
-                <div ref={menu} className='fixed sm:relative sm:translate-x-0 sm:min-h-fit sm:w-full top-0 z-20 bg-blue-300 dark:bg-gray-800 w-8/12 min-h-screen transform -translate-x-full transition easy-in-out'>
+                <div ref={menu} className='fixed sm:relative duration-500 sm:translate-x-0 sm:min-h-fit sm:w-full top-0 z-20 bg-blue-300 dark:bg-gray-800 w-8/12 min-h-screen transform -translate-x-full transition easy-in-out'>
                     <div className='flex justify-between h-16 dark:bg-gray-700 bg-blue-600 px-4 sm:hidden'><button onClick={themeHandler}>{theme == "light" ? <DarkModeIcon style={{ fontSize: 20, color: '#fff' }} /> : <LightModeIcon style={{ fontSize: 20, color: '#fff' }} />}</button>
                         <button onClick={menucloser} className='transform active:scale-90'><ArrowBackIosNewIcon style={{ fontSize: 20 }} /></button></div>
                     <div>
