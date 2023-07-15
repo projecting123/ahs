@@ -58,7 +58,7 @@ const Navbar = () => {
                 <nav className='flex justify-between px-4 h-16 dark:bg-gray-600 bg-teal-200 items-center sm:hidden'>
                     <button className='transform active:scale-90' onClick={menuopener}><MenuIcon /></button><div><img className='h-10' src="../photos/AHS-Heading-transparent.png" alt="School Logo" /></div>
                 </nav>
-                <div ref={menu} className='absolute sm:relative sm:translate-x-0 sm:min-h-fit sm:w-full top-0 z-20 bg-blue-300 dark:bg-gray-800 w-8/12 min-h-screen transform -translate-x-full transition easy-in-out'>
+                <div ref={menu} className='fixed sm:relative sm:translate-x-0 sm:min-h-fit sm:w-full top-0 z-20 bg-blue-300 dark:bg-gray-800 w-8/12 min-h-screen transform -translate-x-full transition easy-in-out'>
                     <div className='flex justify-between h-16 dark:bg-gray-700 bg-blue-600 px-4 sm:hidden'><button onClick={themeHandler}>{theme == "light" ? <DarkModeIcon style={{ fontSize: 20, color: '#fff' }} /> : <LightModeIcon style={{ fontSize: 20, color: '#fff' }} />}</button>
                         <button onClick={menucloser} className='transform active:scale-90'><ArrowBackIosNewIcon style={{ fontSize: 20 }} /></button></div>
                     <div>
